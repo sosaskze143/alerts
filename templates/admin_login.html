@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="login-box">
+<h2>تسجيل دخول إداري</h2>
+<form method="post" action="/admin_panel">
+  <input type="password" name="number" placeholder="الرقم الوظيفي" required>
+  <button type="submit" class="btn primary">دخول</button>
+</form>
+</div>
+{% endblock %}

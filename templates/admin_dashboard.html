@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>لوحة التحكم</h2>
+<form method="post" action="/send" enctype="multipart/form-data" class="form-card">
+  <label>عنوان التنبيه:</label>
+  <input type="text" name="title" required>
+  <label>نص التنبيه:</label>
+  <textarea name="body" required></textarea>
+  <label>صورة (اختياري)</label>
+  <input type="file" name="image" accept="image/*">
+  <button class="btn primary" type="submit">إرسال</button>
+</form>
+
+<h3>كل التنبيهات</h3>
+<div class="notifications">
+{% for n in notifications %}
+<div class="card">
+  <h4>{{ n['title'] }}</h4>
+  <p>{{ n['body'] }}</p>
+  {% if n['image'] %}<img src="{{ n['image'] }}" class="notice-img">{% endif %}
+  <form method="post" action="/delete/{{ n['id'] }}">
+    <button class="btn danger">حذف</button>
+  </form>
+</div>
+{% else %}<p>لا توجد تنبيهات</p>{% endfor %}
+</div>
+{% endblock %}

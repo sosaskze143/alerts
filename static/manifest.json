@@ -1,0 +1,12 @@
+{
+  "name": "هيئة التنبيهات العامة",
+  "short_name": "التنبيهات",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#003366",
+  "icons":[
+    {"src":"/static/images/logo2.png","sizes":"192x192","type":"image/png"},
+    {"src":"/static/images/logo2.png","sizes":"512x512","type":"image/png"}
+  ]
+}

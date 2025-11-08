@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <img src="{{ url_for('static', filename='images/logo1.png') }}" class="logo-large">
+  <h2>مرحباً بك في هيئة التنبيهات العامة</h2>
+  <div class="buttons">
+    <button class="btn" onclick="location.href='/user'">مستخدم</button>
+    <button class="btn" onclick="location.href='/admin'">إداري</button>
+  </div>
+</div>
+{% endblock %}

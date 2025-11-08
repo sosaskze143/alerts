@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>تنبيهات المستخدم</h2>
+<button id="enablePush" class="btn primary">تفعيل الإشعارات</button>
+<div class="notifications">
+  {% for n in notifications %}
+  <div class="card">
+    <h3>{{ n['title'] }}</h3>
+    <p>{{ n['body'] }}</p>
+    {% if n['image'] %}<img src="{{ n['image'] }}" class="notice-img">{% endif %}
+  </div>
+  {% else %}
+  <p>لا توجد إشعارات حالياً</p>
+  {% endfor %}
+</div>
+{% endblock %}
